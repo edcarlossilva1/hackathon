@@ -1,6 +1,6 @@
 # Projeto pós graduação | Hackathon - fase 5
 
-Projeto Teche Challenge realizado para pós-graduação [FIAP](https://www.fiap.com.br/) do curso de [Arquitetura e desenvolvimentoJAVA](https://postech.fiap.com.br/curso/arquitetura-desenvolvimento-java) propõe na terceira fase do curso o desenvolvimento de um sistema WEB, com interfaces e APIS, para cadastro de cliente, endereços, veiculos e gerenciamneto de estacionamento - (Parquimetro), com a finalidade de calcular o consumo durante o periodo de utilização da vaga, assim como escolher formas de pagamentos entre PIX, cartão de crédito ou de débito. A API foi desenvolvida com as tecnologias Spring Boot, Java17, Maven e banco de dados interno h2. e banco de dados Postgres em nuvem no Docker o objetivo de uma solução pratica com a utilização de endpoints para realização de operações  de criação, atualização e recuperação de registros. 
+Projeto Hackathon realizado para pós-graduação [FIAP](https://www.fiap.com.br/) do curso de [Arquitetura e desenvolvimentoJAVA](https://postech.fiap.com.br/curso/arquitetura-desenvolvimento-java) propõe nesta 5º fase a construção de um sistema que permita que clientes faça suas reservas, escolhendo localidade, consultando ameniadedes, quartos, serviços e preços, recebendo um e-mail com o resumo da sua reserva, alem de verificar diponibilidades de datas e realização de cancelamentos. 
 
 ## Índice
 
@@ -82,7 +82,7 @@ services:
   # ====================================================================================================================
   pg-docker:
     image: postgres:14-alpine
-    container_name: park-postgresql
+    container_name: dev-postgresql
     environment:
       POSTGRES_DB: mydatabase
       POSTGRES_PASSWORD: 1234567
@@ -91,13 +91,13 @@ services:
     volumes:
       - ./.data/postgresql/data:/var/lib/postgresql/data
     networks:
-      - ed-network
+      - dev-network
   # ====================================================================================================================
   # PGADMIN
   # ====================================================================================================================
   pgadmin-docker:
     image: dpage/pgadmin4
-    container_name: park-pgadmin
+    container_name: dev-pgadmin
     environment:
       PGADMIN_DEFAULT_EMAIL: me@example.com
       PGADMIN_DEFAULT_PASSWORD: 1234567
@@ -108,13 +108,14 @@ services:
     depends_on:
       - pg-docker
     networks:
-      - ed-network
+      - dev-network
 # ======================================================================================================================
 # REDE
 # ======================================================================================================================
 networks:
-  ed-network:
+  dev-network:
     driver: bridge
+
 ```
 #### *Passos para realizar após a execução do script pelo powershell* <br/><br/>
 
@@ -160,6 +161,13 @@ Nesta segunda fase o desafio continua grande, estou aprendendo muito com as live
 ### Terceira fase
 
 Nesta terceira fase consegui ter um melhor desenpenho no desenvolvimento do que foi proposto para o negócio, com mais clareza e entendimento nas lives do coda comigo, consegui melhorar minha aplicação e utilizar nos processo de CRUD os conceitos de relacionamento OneToOne, ManyToOne, OneToMany, ManyToMany, tanto no contexto unidirecional quanto no bidirecional, aplicando as camadas de segurança e realizando o tratamento das exceções, para garantira a validação de dados e a sua segurança. Para mim foi muito interessante essa troca de experincia e informações nas lives, em meu projeto estou conseguindo aplicar muitas dicas e aprendizados, agora consigo enteder melhor meu código e como funciona e para que servem os padrões de camadas, consegui aplicar a utilização do banco de dados em nuvem não requerendo consumo da máquina local, além de possibilitar o desenvolvimento em ambientes diferentes como ambiente de desenvolvimento, ambiente de teste e ambiente de produção para quando for o caso de colocar a aplicação em nuvem.
+
+
+### Quarta fase
+
+### Quinta fase
+
+
 
 ## Autor
 
