@@ -145,6 +145,9 @@ networks:
    ## Consulta Parquimetro banco de dados Postgres
    <img width="829" alt="Consulta Parquimetro Postgres" src="https://github.com/edcarlossilva1/parquimetro/assets/138680851/2a4f1dc1-abf1-4b8e-bd04-96433da51ee4">
 
+#### *LINK DE CONSULTA DAS APIS NO SWAGGER* <br/><br/>
+       
+    [SWAGGER](http://localhost:8080/swagger-ui/index.html#/API%20CLIENTE)
 
 
 ## Jornada
